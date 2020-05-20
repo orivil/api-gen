@@ -1,0 +1,16 @@
+// This file is auto generated, do not edit!
+{{# each groups as |group|}}
+import {{group.index}} from './{{group.index}}'
+{{/each}}
+
+export default {
+    modules: {
+    {{# each groups as |group|}}
+        {{# if @first}}
+        {{group.index}}
+        {{~else}},
+        {{group.index}}
+        {{/if}}
+    {{/each}}
+    }
+}

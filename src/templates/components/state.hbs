@@ -1,0 +1,11 @@
+// This file is auto generated, do not edit!
+export default function () {
+  return { {{~#each components as | component |}}{{# if @first}}{{else}},{{/if}}
+    {{component.stateName}}: { {{~#each component.parameters as | parameter |}}{{# if @first}}{{else}},{{/if}}
+      {{parameter.in~}}:{{# if parameter.schema.properties }} { {{~# each parameter.schema.properties}}{{# if @first}}{{else}},{{/if}}{{# with this as | schema |}}{{# with @key as | property |}}
+        {{property}}: {{schema.state}}{{/with}}{{/with}}{{/each}}
+      }
+      {{~else~}}{{parameter.schema.jsType}}{{/if}}{{/each}}
+    }{{/each}}
+  }
+}

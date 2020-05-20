@@ -1,0 +1,19 @@
+// This file is auto generated, do not edit!
+{{# each components as | component |}}
+
+/**
+ * @method {{component.setFuncName}}{{# if component.description }} - {{component.description}}{{/if}}
+ * @param {Object} state
+{{# each component.parameters as | parameter |}}
+ * @param { {{~parameter.schema.jsType~}} } {{parameter.in}}
+ {{# if parameter.schema.properties }}
+     {{# each parameter.schema.properties }}
+ * @param { {{~this.jsType~}} } {{parameter.in}}.{{@key}}
+     {{/each}}
+ {{/if}}
+{{/each}}
+*/
+export function {{component.setFuncName}} (state, {{component.inputParams}}) {
+  state.{{component.stateName}} = {{component.inputParams}}
+}
+{{/each}}

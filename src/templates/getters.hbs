@@ -1,0 +1,36 @@
+// This file is auto generated, do not edit!
+{{# each groups as |group|}}
+{{# each group.paths as |path|}}
+/**
+ * @method {{path.doc.getFuncName}}{{# if path.doc.description }} - {{path.doc.description}}{{/if}}
+ * @param {Object} state - the root state
+*/
+export function {{path.doc.getFuncName}} (state) {
+    let request = {
+        method: '{{path.method}}',
+        path: '{{path.path}}',
+        {{# if path.body_encode_type}}
+        bodyEncodeType: '{{path.body_encode_type}}',
+        {{/if}}
+        params: {
+            url: {}, body: {}, header: {}
+        }
+    }
+    {{# if path._components}}
+    {{# each path._components as | component |}}
+    assign(request.params, state.components.{{component.stateName}})
+    {{/each}}
+    {{/if}}
+    {{# if path.doc.parameters}}
+    assign(request.params, state.groups.{{group.index}}.{{path.doc.stateName}})
+    {{/if}}
+    return request
+}
+{{/each}}
+{{/each}}
+
+function assign(dst, src) {
+    Object.assign(dst.url, src.url)
+    Object.assign(dst.header, src.header)
+    Object.assign(dst.body, src.body)
+}
