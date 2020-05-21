@@ -1,12 +1,16 @@
 {
-  "name": "morginex",
+  "name": "api-gen",
   "version": "1.0.0",
-  "description": "for generating morginex apis",
+  "description": "For generating morgine apis",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "morginex",
+  "author": "morgine",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:orivil/api-gen.git"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/lodash": "^4.14.150",
