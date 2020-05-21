@@ -1,9 +1,10 @@
 {
-  "name": "api-gen",
+  "name": "morgine-api",
   "version": "1.0.0",
   "description": "For generating morgine apis",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "morgine",

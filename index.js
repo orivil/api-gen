@@ -1,4 +1,4 @@
-import { render } from "./src/render";
+import { render } from "./built/render";
 
 export default {
     render
