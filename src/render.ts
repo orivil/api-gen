@@ -1,9 +1,9 @@
 let filepath = require('path')
-const Handlebars = require("handlebars");
-let fs = require("fs")
+const Handlebars = require('handlebars');
+let fs = require('fs')
 
 function readTemplate(name: string): string {
-    return fs.readFileSync(filepath.join('./templates', name + '.hbs'), 'utf8')
+    return fs.readFileSync(filepath.join('../templates', name + '.hbs'), 'utf8')
 }
 
 import {morgine, group, doc} from './types'
